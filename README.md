@@ -1,8 +1,6 @@
 # ChatDocs
 
-🚀 **Live Demo**: [https://chatdocs-emrevarank.streamlit.app](https://chatdocs-emrevarank.streamlit.app)
-
-> ⚠️ Deployment sonrası yukarıdaki linki kendi Streamlit Cloud linkinizle güncelleyin!
+🚀 **Live Demo**: [https://chatdocs61.streamlit.app](https://chatdocs61.streamlit.app)
 
 ChatDocs is an AI-powered web application designed for intelligent question-answering from blog posts and online articles. Built with a Retrieval Augmented Generation (RAG) architecture, it helps users efficiently extract insights from web content through an intuitive chat interface.
 
@@ -21,10 +19,10 @@ The application addresses the challenge of quickly understanding and querying lo
 
 ## Features and Use Cases
 
-- **Web-Based Interface**: Clean, modern Gradio interface accessible from any browser
+- **Web-Based Interface**: Clean, modern Streamlit chat interface accessible from any browser
 - **Real-Time Streaming**: See AI responses as they're generated, word by word
 - **Example Questions**: Pre-loaded examples to help users get started quickly
-- **Copy-to-Clipboard**: Easy sharing of generated answers
+- **Chat History**: Conversation history maintained during session
 - **Local Embeddings**: Free, offline embeddings using HuggingFace models (no API costs)
 - **Configurable LLM**: Adjust temperature, top_p, and top_k parameters for response control
 
@@ -58,24 +56,6 @@ The application addresses the challenge of quickly understanding and querying lo
 The application is currently configured to analyze:
 - **Blog Post**: [LLM Hallucination by Lilian Weng](https://lilianweng.github.io/posts/2024-07-07-hallucination/)
 - **Topics Covered**: Hallucination in LLMs, detection methods, mitigation strategies, factuality vs faithfulness
-
-## 🌐 Deploy to Streamlit Cloud (Recommended)
-
-**Quick Steps:**
-1. Push your code to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Sign in with GitHub
-4. Click **New app**
-5. Select your repository: `EmreVarank/ChatDocs`
-6. Main file path: `main.py`
-7. Add your `GOOGLE_API_KEY` in **Advanced settings** → **Secrets**:
-   ```toml
-   GOOGLE_API_KEY = "your_google_api_key_here"
-   ```
-8. Click **Deploy**!
-9. Your app will be live at: `https://APP_NAME.streamlit.app`
-
-Detailed guide below ⬇️
 
 ## Local Installation Steps
 
