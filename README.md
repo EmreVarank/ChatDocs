@@ -1,5 +1,9 @@
 # ChatDocs
 
+🚀 **Live Demo**: [https://chatdocs-emrevarank.streamlit.app](https://chatdocs-emrevarank.streamlit.app)
+
+> ⚠️ Deployment sonrası yukarıdaki linki kendi Streamlit Cloud linkinizle güncelleyin!
+
 ChatDocs is an AI-powered web application designed for intelligent question-answering from blog posts and online articles. Built with a Retrieval Augmented Generation (RAG) architecture, it helps users efficiently extract insights from web content through an intuitive chat interface.
 
 The application addresses the challenge of quickly understanding and querying long-form content by providing instant, contextually accurate answers based on the source material.
@@ -32,7 +36,7 @@ The application addresses the challenge of quickly understanding and querying lo
 
 ## Technologies Used
 
-- **Backend**: Python, Gradio
+- **Backend**: Python, Streamlit
 - **GenAI**: Google Gemini 2.0 Flash, HuggingFace Embeddings, LangChain
 - **Vector Database**: Chroma
 - **Web Scraping**: BeautifulSoup4, LangChain WebBaseLoader
@@ -54,6 +58,24 @@ The application addresses the challenge of quickly understanding and querying lo
 The application is currently configured to analyze:
 - **Blog Post**: [LLM Hallucination by Lilian Weng](https://lilianweng.github.io/posts/2024-07-07-hallucination/)
 - **Topics Covered**: Hallucination in LLMs, detection methods, mitigation strategies, factuality vs faithfulness
+
+## 🌐 Deploy to Streamlit Cloud (Recommended)
+
+**Quick Steps:**
+1. Push your code to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Sign in with GitHub
+4. Click **New app**
+5. Select your repository: `EmreVarank/ChatDocs`
+6. Main file path: `main.py`
+7. Add your `GOOGLE_API_KEY` in **Advanced settings** → **Secrets**:
+   ```toml
+   GOOGLE_API_KEY = "your_google_api_key_here"
+   ```
+8. Click **Deploy**!
+9. Your app will be live at: `https://APP_NAME.streamlit.app`
+
+Detailed guide below ⬇️
 
 ## Local Installation Steps
 
@@ -80,10 +102,10 @@ The application is currently configured to analyze:
 
 5. Run the application:
    ```bash
-   python main.py
+   streamlit run main.py
    ```
 
-6. Open your browser and go to `http://127.0.0.1:7860`
+6. Open your browser - Streamlit will automatically open at `http://localhost:8501`
 
 ## Configuration
 
@@ -118,26 +140,25 @@ llm = ChatGoogleGenerativeAI(
 
 ### Custom Example Questions
 
-Update the example questions in the Gradio interface:
+Update the example questions in the Streamlit app sidebar (in `main.py`):
 
 ```python
-gr.Examples(
-    examples=[
-        "Your question 1?",
-        "Your question 2?",
-        "Your question 3?",
-    ],
-    inputs=question_input
-)
+example_questions = [
+    "Your question 1?",
+    "Your question 2?",
+    "Your question 3?",
+]
 ```
 
 ## Project Structure
 
 ```
 ChatDocs/
-├── main.py                 # Main application file
+├── main.py                 # Main Streamlit application
 ├── requirements.txt        # Python dependencies
 ├── .env                    # Environment variables (API keys)
+├── .streamlit/
+│   └── secrets.toml        # Streamlit secrets (for deployment)
 ├── .gitignore              # Git ignore file
 ├── images/                 # Sample outputs
 ├── .vscode/                
@@ -155,7 +176,7 @@ ChatDocs/
 - `langchain-chroma>=0.1.4` - Chroma vector store
 - `google-generativeai>=0.8.5` - Google AI SDK
 - `sentence-transformers>=5.0.0` - Local embeddings
-- `gradio>=5.0.0` - Web interface
+- `streamlit>=1.28.0` - Web interface
 - `beautifulsoup4` - Web scraping
 - `python-dotenv` - Environment management
 
